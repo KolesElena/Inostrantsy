@@ -1,0 +1,144 @@
+.Posts {
+    margin: 20px;
+    color: green;
+    overflow-x: scroll;
+    height: 80vh;
+}
+
+.Post {
+    min-width: 300px;
+    min-height: 200px;
+    float: left !important;
+    text-align: left;
+  background: #fff;
+    max-width: 385px !important;
+    position: relative;
+    left: 0;
+    clear: both;
+  margin-right: 5px;
+    float: none !important;
+    transition: transform .2s ease-in-out;
+    vertical-align: top;
+  padding: 20px 25px;
+}
+
+.PostMove {
+    min-width: 300px;
+    float: left !important;
+    text-align: left;
+  background: #fff;
+    max-width: 385px !important;
+    position: relative;
+    display: inline-block;
+    left: 0;
+    clear: both;
+  margin-right: 5px;
+    float: none !important;
+    transition: transform .2s ease-in-out;
+    vertical-align: top;
+  padding: 20px 25px;
+  transform: transalteX(100px);
+}
+
+
+.Blog li {
+    list-style-type: none;
+}
+
+.Blog a {
+        text-decoration: none;
+}
+
+.Blog a:active, a:hover, a.active {
+        color: blue;
+}
+.cards-slider {
+    overflow: hidden;
+      white-space: nowrap;
+      width: 1000px;
+      height: 100%;
+      position: relative;
+      display: inline-block;
+    background: #e3e3e3;
+    margin: 5px 0;
+    border: 1px solid #D8D8D8;
+    box-shadow: 1px 1px 10px #D8D8D8;
+  }
+  
+  
+  .slider-btn {
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+    color: #b3b3b3;
+    width: 45px;
+    height: 100%;
+    border: 0;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    position: absolute;
+    z-index: 999;
+    transition: all 0.6s ease 0s;
+  }
+
+  button.buttonBack___1mlaL.carousel__back-button {
+    top: 0;
+    right: 135px;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+button.buttonNext___2mOCa.carousel__next-button {
+    bottom: 20px;
+    right: 150px;
+    position: fixed;
+    transform: rotate(90deg);
+}
+
+ 
+  .slider-btn:hover {
+    color: #5f5f5f;
+    background: rgba(0,0,0,0.2);
+  }
+  
+  .btn-r {
+    right: 0;
+  }
+  .btn-l {
+    left: 0px;
+  }
+
+  .Container {
+      display: flex;
+      height: 80vh;
+  }
+
+  .verticalSlideTrayWrap___2nO7o {
+    overflow: visible !important;
+}
+
+  @media screen and (max-width: 979px) and (min-width: 740px) {
+    aside {
+        width: 30%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    aside {
+        width: 100%;
+    }
+    .Container {
+        display: block;
+    }
+    button.buttonBack___1mlaL.carousel__back-button {
+       display: none
+    }
+    
+    button.buttonNext___2mOCa.carousel__next-button {
+        display: none;
+    }
+  }
+
+
+

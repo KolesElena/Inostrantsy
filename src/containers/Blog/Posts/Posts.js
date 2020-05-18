@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 
 import Post from '../../../components/Post/Post';
 import axios from "axios";
+import { Link } from "react-router-dom";
+// import FullPost from './../FullPost/FullPost';
+// import { Route } from 'react-router-dom';
 
-const Posts =()=> {
+const Posts =(props)=> {
 
     const [posts, setPosts] = useState([]);
 
-    const [selectedPostId, setSelectedPostId] = useState('null');
+    const [selectedPostId, setSelectedPostId] = useState({selectedPostId: ''});
     const [error, setError] = useState(false);
 
     useEffect(()=>{ 
-        axios.get('https://jsonplaceholder.typicode.com/posts/')
+        axios.get('http://localhost:5000/exercises/')
        .then(responseData => {
-           const postsAPI = responseData.data.slice(0,4);
+           const postsAPI = responseData.data;
            const updatedPosts = postsAPI.map(post => {
                return {
                    ...post,
@@ -28,20 +31,28 @@ const Posts =()=> {
 
           
        const postSelectedHandler = (id) => {
-           setSelectedPostId(id)
+           setSelectedPostId({selectedPostId: id})
        }
 
        const allPosts = posts.map(post => {
-           return <Post title ={post.title} key ={post.id} author ={post.author} clicked ={() => {postSelectedHandler(post.id)}}/>
+           return (
+            <Link to={'/' + post._id} key ={post._id}>
+                <Post file ={post.file} title = {post.description} author ={post.username} date= {post.date} duration ={post.duration} clicked ={() => {postSelectedHandler(post._id)}}/>
+           </Link>
+           );
        });
 
-if (!error) {
+
     return (
+        <div>
         <section className="Posts">
               {allPosts}
         </section> 
+         
+      
+        </div>
     );
-}
+
 
 return <p>Someting went wrong!</p>
 

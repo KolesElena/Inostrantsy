@@ -8,15 +8,12 @@ const FullPost = (props) => {
     
     useEffect(()=>{ 
         if (props.id) {
-            if (( loadedPost.id !== props.id) || (loadedPost.id === "null")) {
-        axios.get('https://jsonplaceholder.typicode.com/posts/'+ props.id).then(response => {
+            if (( loadedPost._id !== props.id) || (loadedPost._id ==="null")) {
+        axios.get('http://localhost:5000/exercises/'+ props.id).then(response => {
         setLoadedPost(response.data);
     });}}});
 
-    const deletePostHandler =() => {
-        axios.delete('https://jsonplaceholder.typicode.com/posts/'+ props.id).then(response => {
-       console.log(response);
-    });}
+   
 
     let post = <p>Please select a Post!</p>;
         if (props.id) {
@@ -26,11 +23,8 @@ const FullPost = (props) => {
         if (loadedPost) {
             post = (
                 <div className="FullPost">
-                    <h1>{loadedPost.title}</h1>
-                    <p>{loadedPost.body}</p>
-                    <div className="Edit">
-                        <button onClick = {deletePostHandler} className="Delete">Delete</button>
-                    </div>
+                    <h1>{loadedPost.username}</h1>
+                    <p>{loadedPost.description}</p>
                 </div>
     
             );
